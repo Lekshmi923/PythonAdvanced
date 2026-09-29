@@ -1,0 +1,40 @@
+from abc import ABC,abstractmethod
+class Shape(ABC):
+
+    @abstractmethod
+    def get_area(self):
+        pass
+
+    @abstractmethod
+    def get_perimeter(self):
+        pass
+
+
+class Rectangle(Shape):
+    def __init__(self):
+        self.length=int(input("Enter the length of rectangle: "))
+        self.breadth=int(input("Enter the breadth: "))
+
+    def get_area(self):
+        print("Area:",self.length*self.breadth)
+
+    def get_perimeter(self):
+        print("Perimeter:",2*(self.length+self.breadth))
+
+r=Rectangle()
+r.get_area()
+r.get_perimeter()
+
+class Square(Shape):
+    def __init__(self):
+        self.length=int(input("Enter the length of square: "))
+
+    def get_area(self):
+        print("Area:",self.length**2)
+
+    def get_perimeter(self):
+        print("Perimeter:",4*self.length)
+
+s=Square()
+s.get_area()
+s.get_perimeter()
